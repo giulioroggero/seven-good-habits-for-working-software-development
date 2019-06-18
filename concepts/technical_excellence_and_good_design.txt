@@ -1,0 +1,10 @@
+Technical excellence and good design are not enough to create working software
+
+- people communication and collaboration
+- ...
+
+Are important too.
+
+We need a balance beetween soft and tech skills.
+
+In this presentation we focus on tech skills to favorite the soft
