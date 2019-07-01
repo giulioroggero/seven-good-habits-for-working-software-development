@@ -14,3 +14,7 @@ Quale complessità bisogna affrontare per scrivere un software robusto?
 - ripristinare le connessioni e liberare la memoria non utilizzata
 
 ALTRE SOLUZIONI?
+
+```bash
+set -a && source default.env
+```

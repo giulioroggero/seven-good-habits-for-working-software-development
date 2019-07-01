@@ -9,7 +9,7 @@ do
   echo "Making dir ${DIR}"
   mkdir ${DIR}
   cd ${DIR}
-  echo "# {hab}" > README.md
+  echo "# ${hab}" > README.md
   cd -
   let COUNT+=1
 done

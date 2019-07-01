@@ -1,9 +1,11 @@
 {
   "name": "1_autorepair_habit",
   "version": "1.0.0",
-  "description": "Cosa fa un software *Robusto*?",
+  "description": "Cosa fa un software *Robusto* o meglio Antifragile?",
   "main": "index.js",
   "dependencies": {
+    "@mia-platform/custom-plugin-lib": "^1.0.2",
+    "@mia-platform/lc39": "^2.2.0",
     "fastify": "^2.6.0",
     "fastify-mongodb": "^1.0.1"
   },
@@ -11,9 +13,10 @@
     "@mia-platform/eslint-config-mia": "^2.0.0"
   },
   "scripts": {
+    "start": "lc39 index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ignore-path=.gitignore"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Giulio Roggero",
+  "license": "Apache 2"
 }

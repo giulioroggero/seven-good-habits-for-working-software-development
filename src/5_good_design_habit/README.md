@@ -1,1 +1,9 @@
-# {hab}
+# Buon design
+
+Il codice deve esprimere le giuste intenzioni
+
+- nomi chiari
+- responsabilità ben affidate
+- il codice deve fare solo il minimo essenziale
+
+

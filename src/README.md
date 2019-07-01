@@ -1,3 +1,5 @@
-Source code examples
+# Evolutionary Design
 
-Hack su log x working sw
+Quello che scrivi oggi è legacy domani.
+
+Fare architetture per poterle cambiare
