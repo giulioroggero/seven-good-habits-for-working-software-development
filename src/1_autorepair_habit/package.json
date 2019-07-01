@@ -1,0 +1,19 @@
+{
+  "name": "1_autorepair_habit",
+  "version": "1.0.0",
+  "description": "Cosa fa un software *Robusto*?",
+  "main": "index.js",
+  "dependencies": {
+    "fastify": "^2.6.0",
+    "fastify-mongodb": "^1.0.1"
+  },
+  "devDependencies": {
+    "@mia-platform/eslint-config-mia": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ignore-path=.gitignore"
+  },
+  "author": "",
+  "license": "ISC"
+}
