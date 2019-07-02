@@ -35,3 +35,12 @@ module.exports = customService(async function index(service) {
   })
 
 })
+
+// eslint-disable-next-line no-unused-vars
+module.exports.healthinessHandler = function healthinessHandler(fastify) {
+  const statusOK = fastify.mongo.client && fastify.mongo.client.isConnected()
+  const checkupResponse = statusOK ? { statusOK } : { statusOK, message: 'Mongo status is unhealthy' }
+
+  return checkupResponse
+}
+
