@@ -1,6 +1,6 @@
-# Tutto è codice!
+# Tutto è codice
 
-ss
+anche questi 45 minuti!
 
 ```bash
 #!/bin/bash
