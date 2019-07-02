@@ -2,12 +2,22 @@
 
 ```bash
 set -a && source default.env
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 ```yml
 HEALTHCHECK --start-period=5s --interval=5s --timeout=2s --retries=2 \
  CMD wget -qO- http://localhost:${HTTP_PORT}/-/healthz &> /dev/null || exit 1
+```
+
+```yml
+autoheal:
+    restart: always
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 ```javascript
@@ -22,6 +32,10 @@ module.exports.healthinessHandler = function healthinessHandler(fastify) {
 
 ```bash
 curl http://localhost:3000/-/healthz | jsonpp
+```
+
+```
+docker inspect 1_autorepair_habit_node_1 | jq ".[].State.Health"
 ```
 
 ```bash
