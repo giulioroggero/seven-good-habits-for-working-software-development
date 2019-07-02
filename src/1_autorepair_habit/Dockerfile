@@ -38,6 +38,9 @@ WORKDIR /home/node/app
 
 COPY --from=build /build-dir ./
 
+HEALTHCHECK --start-period=5s --interval=5s --timeout=2s --retries=2 \
+ CMD wget -qO- http://localhost:${HTTP_PORT}/-/healthz &> /dev/null || exit 1
+
 USER node
 
 CMD ["npm", "start", "--", "--options", "--port", "${HTTP_PORT}", "--log-level", "${LOG_LEVEL}", "--prefix=${SERVICE_PREFIX}", "--address", "0.0.0.0"]

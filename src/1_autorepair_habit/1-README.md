@@ -5,7 +5,7 @@ Cosa fa un software *Robusto*?
 - se ci sono errori di I/O continua a funzionare
 - gestisce in modo pulito tutte le condizioni di "edge case"
 - quando è stressato non si blocca ma riduce le performance e consente il recupero del sistema
-- ecc
+- altre???
 
 Quale complessità bisogna affrontare per scrivere un software robusto?
 
@@ -14,8 +14,3 @@ Quale complessità bisogna affrontare per scrivere un software robusto?
 - ripristinare le connessioni e liberare la memoria non utilizzata
 
 ALTRE SOLUZIONI?
-
-```bash
-set -a && source default.env
-docker-compose up --build
-```
