@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<!-- Appenders -->
+  <appender class="org.apache.log4j.ConsoleAppender" name="console">
+    <param  name="Target" value="System.out"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param  name="ConversionPattern" value="%-5p: [%t][%d{MMM-dd HH:mm:ss,SSS}] %c{3} - %m%n"/>
+    </layout>
+  </appender>
+
+<!-- File Appender -->
+  <appender class="org.apache.log4j.RollingFileAppender" name="file">
+    <param  name="File" value="log/hkpidashboard.log"/>
+    <param  name="MaxFileSize" value="25000KB"/>
+    <param  name="MaxBackupIndex" value="10"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param  name="ConversionPattern" value="%-5p: [%t][%d{MMM-dd HH:mm:ss,SSS}] %c{3} - %m%n"/>
+    </layout>
+  </appender>
+
+  <logger name="org.springframework.beans">
+    <level  value="warn"/>
+  </logger>
+
+  <logger name="org.springframework.web">
+    <level  value="warn"/>
+  </logger>
+
+  <logger name="org.codehaus.jackson">
+    <level  value="warn"/>
+  </logger>
+
+  <logger name="com.sirti">
+    <level  value="debug"/>
+  </logger>
+
+<!-- Root Logger -->
+  <root>
+    <priority  value="error"/>
+    <appender-ref  ref="console"/>
+  </root>
+
+</log4j:configuration>

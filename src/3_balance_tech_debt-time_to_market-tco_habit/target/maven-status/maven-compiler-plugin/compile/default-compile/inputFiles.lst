@@ -1,0 +1,12 @@
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/Application.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/resultset/ReaderResultSet.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/util/JsonSqlDateSerializer.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/dao/ReaderDao.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/dao/ReaderDaoImpl.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/controller/ReaderController.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/CORSFilter.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/service/ReaderQueryService.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/util/Sanitizer.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/config/ReaderOutputMapper.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/util/SqlDateManager.java
+/Users/giulioroggero/sourcecode/presentations/seven-good-habits-for-working-software-development/src/3_balance_tech_debt-time_to_market-tco_habit/src/main/java/eu/miaplatform/dbsqlreader/config/ReaderConfig.java

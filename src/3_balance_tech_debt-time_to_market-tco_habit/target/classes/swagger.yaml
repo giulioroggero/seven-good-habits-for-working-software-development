@@ -1,0 +1,543 @@
+---
+swagger: '2.0'
+
+info:
+  title: microservice-sqlreader
+  version: 1.0.0
+  description: Miscroservice sqlreader api description
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+host: "localhost:3000"
+basePath: "/sqlreader"
+
+paths:
+
+######################################################################################
+#################################### START PATHS #####################################
+######################################################################################
+
+  "/reader/query":
+    get:
+      tags:
+        - SelectQuery
+      description: 'SelectQuery a profile and export the result as a json'
+      parameters:
+
+      - name: group
+        in: query
+        type: string
+        description: 'A comma separated list of groups'
+
+      - name: columns
+        in: query
+        type: string
+        description: 'A comma separated list of columns'
+
+      - name: atype
+        in: query
+        type: string
+        description: 'A string defining the Alarm Type (atype) - Default value is *M*'
+        default: 'M'
+
+      - name: dday
+        in: query
+        type: string
+        description: 'A string defining the Dday (dday)'
+        default: ''
+
+      - name: lastDDAY
+        in: query
+        type: string
+        description: 'A string defining the lastDDAY (lastDDAY)'
+        default: ''
+
+      - name: firstMd5Sum
+        in: query
+        type: string
+        description: 'A string defining the firstMd5Sum'
+        default: ''
+
+      - name: lastMd5Sum
+        in: query
+        type: string
+        description: 'A string defining the lastMd5Sum (lastMd5Sum)'
+        default: ''
+
+      - name: firstDDAY
+        in: query
+        type: string
+        description: 'A string defining the firstDDAY (firstDDAY)'
+        default: ''
+
+      - name: sortBy
+        in: query
+        type: string
+        description: 'A string defining the sorting'
+        default: ''
+
+      - name: tablename
+        in: query
+        type: string
+        description: 'A string defining the tablename'
+        default: ''
+
+      - name: sql
+        in: query
+        type: string
+        description: 'A string defining the sql'
+        default: ''
+
+      - name: profile
+        in: query
+        type: string
+        description: 'A string defining the profile'
+
+      - name: sortDir
+        in: query
+        type: string
+        description: 'A string defining the sortDir'
+        default: ''
+
+      - name: startTime
+        in: query
+        type: string
+        description: 'A string defining the startTime'
+
+      - name: endTime
+        in: query
+        type: string
+        description: 'A string defining the endTime'
+
+      - name: page
+        in: query
+        type: integer
+        description: 'A string defining the page - Defalt value is 0'
+        default: 0
+
+      - name: size
+        in: query
+        type: integer
+        description: 'A string defining the size - Defalt value is 0'
+        default: 0
+
+      - name: pagesize
+        in: query
+        type: integer
+        description: 'A string defining the pagesize - Defalt value is 0'
+        default: 0
+
+      - name: filterscount
+        in: query
+        type: integer
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafieldX* and the *filtervalueX* query parameter, where X is the an index that allows to match the corresponding filter field and value.'
+        default: 0
+
+      - name: filterdatafield0
+        in: query
+        type: string
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafield* and the *filtervalue* query parameter of this reuqest in ordered in the same way'
+        default: 0
+
+      - name: filtervalue0
+        in: query
+        type: string
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafield* and the *filtervalue* query parameter of this reuqest in ordered in the same way'
+        default: 0
+
+      - name: lookupFilterName
+        in: query
+        type: string
+        description: 'A string defining the lookupFilterName'
+
+      - name: aggregate
+        in: query
+        type: string
+        description: 'A string defining the aggregate'
+
+      - name: windows
+        in: query
+        type: string
+        description: 'A string defining the windows'
+
+      responses:
+        '200':
+          description: 'The response is an http 200 both if contains error or not.'
+          schema:
+            $ref: '#/definitions/ReaderResultSet'
+
+    post:
+      tags:
+        - SelectQuery
+      description: 'SelectQuery a profile and export the result as a json'
+      parameters:
+
+      - name: profile
+        in: query
+        type: string
+        description: 'Specifies which table is queried'
+
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReaderPostBody'
+
+      responses:
+        '200':
+          description: 'The response is an http 200 both if contains error or not.'
+          schema:
+            $ref: '#/definitions/ReaderResultSet'
+
+  "/reader/columns":
+    get:
+      tags:
+        - Columns
+      description: 'Allow to retrieve the description of the columns of the specified profile'
+      parameters:
+
+      - name: profile
+        in: query
+        type: string
+        description: 'The profile you want to retrieve info'
+
+      responses:
+        '200':
+          description: 'The response is an http 200 both if contains error or not.'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/columnDescription'
+
+  "/reader/export":
+    get:
+      tags:
+        - Exports
+      description: 'SelectQuery a profile and export the result as a csv'
+      parameters:
+
+      - name: profile
+        in: query
+        type: string
+        description: 'The profile you want to retrieve info'
+
+      - name: filename
+        in: query
+        type: string
+        description: 'The name you want the file has'
+
+      - name: filetype
+        in: query
+        type: string
+        description: 'The extension you want the file has'
+        default: 'csv'
+
+      - name: group
+        in: query
+        type: string
+        description: 'A comma separated list of groups'
+
+      - name: columns
+        in: query
+        type: string
+        description: 'A comma separated list of columns'
+
+      - name: atype
+        in: query
+        type: string
+        description: 'A string defining the Alarm Type (atype) - Default value is *M*'
+        default: 'M'
+
+      - name: dday
+        in: query
+        type: string
+        description: 'A string defining the Dday (dday)'
+        default: ''
+
+      - name: lastDDAY
+        in: query
+        type: string
+        description: 'A string defining the lastDDAY (lastDDAY)'
+        default: ''
+
+      - name: firstMd5Sum
+        in: query
+        type: string
+        description: 'A string defining the firstMd5Sum'
+        default: ''
+
+      - name: lastMd5Sum
+        in: query
+        type: string
+        description: 'A string defining the lastMd5Sum (lastMd5Sum)'
+        default: ''
+
+      - name: firstDDAY
+        in: query
+        type: string
+        description: 'A string defining the firstDDAY (firstDDAY)'
+        default: ''
+
+      - name: sortBy
+        in: query
+        type: string
+        description: 'A string defining the sorting'
+        default: ''
+
+      - name: tablename
+        in: query
+        type: string
+        description: 'A string defining the tablename'
+        default: ''
+
+      - name: sql
+        in: query
+        type: string
+        description: 'A string defining the sql'
+        default: ''
+
+      - name: sortDir
+        in: query
+        type: string
+        description: 'A string defining the sortDir'
+        default: ''
+
+      - name: startTime
+        in: query
+        type: string
+        description: 'A string defining the startTime'
+
+      - name: endTime
+        in: query
+        type: string
+        description: 'A string defining the endTime'
+
+      - name: page
+        in: query
+        type: integer
+        description: 'A string defining the page - Defalt value is 0'
+        default: 0
+
+      - name: size
+        in: query
+        type: integer
+        description: 'A string defining the size - Defalt value is 0'
+        default: 0
+
+      - name: pagesize
+        in: query
+        type: integer
+        description: 'A string defining the pagesize - Defalt value is 0'
+        default: 0
+
+      - name: filterscount
+        in: query
+        type: integer
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafieldX* and the *filtervalueX* query parameter, where X is the an index that allows to match the corresponding filter field and value.'
+        default: 0
+
+      - name: filterdatafield0
+        in: query
+        type: string
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafield* and the *filtervalue* query parameter of this reuqest in ordered in the same way'
+        default: 0
+
+      - name: filtervalue0
+        in: query
+        type: string
+        description: 'Describe how many filters contains this request. Each filter has to be spacified in the *filterdatafield* and the *filtervalue* query parameter of this reuqest in ordered in the same way'
+        default: 0
+
+      - name: lookupFilterName
+        in: query
+        type: string
+        description: 'A string defining the lookupFilterName'
+
+      - name: aggregate
+        in: query
+        type: string
+        description: 'A string defining the aggregate'
+
+      - name: windows
+        in: query
+        type: string
+        description: 'A string defining the windows'
+
+      responses:
+        '200':
+          description: 'The response is an http 200 both if contains error or not.'
+          schema:
+            $ref: '#/definitions/ReaderResultSet'
+
+    post:
+      tags:
+        - Exports
+      description: 'SelectQuery a profile and export the result as a csv'
+      parameters:
+
+      - name: profile
+        in: query
+        type: string
+        description: 'The profile you want to retrieve info'
+
+      - name: filename
+        in: query
+        type: string
+        description: 'The name you want the file has'
+
+      - name: filetype
+        in: query
+        type: string
+        description: 'The extension you want the file has'
+        default: 'csv'
+
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReaderPostBody'
+
+      responses:
+        '200':
+          description: 'The response is an http 200 both if contains error or not.'
+          schema:
+            $ref: '#/definitions/ReaderResultSet'
+
+
+######################################################################################
+##################################### END PATHS ######################################
+######################################################################################
+
+
+definitions:
+
+  ReaderPostBody:
+    type: object
+    description: 'todo'
+    properties:
+
+      filterSql:
+        description: 'The exact sql WHERE clause that is inserted in the sql query performed by this request'
+        type: array
+
+      offset:
+        description: 'The offset inserted in the sql query performed by this request'
+        type: integer
+        default: 0
+
+      size:
+        description: 'The limit inserted in the sql query performed by this request'
+        type: integer
+        default: 100
+
+      reportFields:
+        description: 'The colums projected in the result, so the column name inserted after the select clause of the sql query. They must be specified as an array of strings.'
+        type: array
+        items:
+          type: string
+
+      orderFields:
+        description: 'Allow to specify how the result is ordered, so to costruct the SORT BY clause of the sql query. '
+        type: array
+        items:
+          $ref: '#/definitions/OrderByPost'
+
+
+  OrderByPost:
+    type: object
+    properties:
+
+      fieldId:
+        type: string
+
+      orderDirection:
+        type: string
+        enum: [
+          'ASC',
+          'DESC'
+        ]
+
+  ReaderResultSet:
+    type: object
+    description: 'todo'
+    properties:
+
+      list:
+        description: 'The result retrieved by the sql query created from this request'
+        type: array
+
+      filter:
+        description: 'The filter specified in the request using POST or GET params'
+        type: object
+
+      columns:
+        description: 'A description of the returned column'
+        type: array
+        items:
+          $ref: '#/definitions/columnDescription'
+
+      totalRows:
+        description: 'The number of rows returned by this query'
+        type: integer
+
+      error:
+        description: 'True, if the response contains errors. False otherwise.'
+        type: boolean
+
+      errorMessage:
+        description: 'Contains an explenation of the message, if the *error* field is true.'
+        type: string
+
+      durationMilliSeconds:
+        description: 'The duration of this operation in milliseconds'
+        type: number
+
+      durationNanoSeconds:
+        description: 'The duration of this operation in nanoseconds'
+        type: number
+
+      sql:
+        description: 'The sql query build and performed through the request'
+        type: string
+
+
+  columnDescription:
+    type: object
+    properties:
+
+      label:
+        description: 'A prettier name to be visualized for this column rather than the column actual name'
+        type: string
+
+      name:
+        description: 'The column actual name'
+        type: string
+
+      type:
+        description: 'The type of this column'
+        type: string
+        enum: [
+          'number',
+          'string',
+          'date'
+        ]
+
+      calculated:
+        description: 'todo'
+        type: boolean
+
+      kpi:
+        description: 'todo'
+        type: boolean
+
+      formatSource:
+        description: 'todo'
+        type: string
+
+      nameOrAsName:
+        description: 'If the name of this column has the *AS* keyword, the value is the word after *AS*. Otherwise it is equal to the *name* property.'
+        type: string
