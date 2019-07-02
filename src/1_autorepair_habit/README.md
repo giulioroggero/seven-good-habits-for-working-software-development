@@ -17,4 +17,5 @@ ALTRE SOLUZIONI?
 
 ```bash
 set -a && source default.env
+docker-compose up --build
 ```
