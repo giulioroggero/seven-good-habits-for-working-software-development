@@ -2,11 +2,9 @@
 
 Risolvere il problema con il minimo sforzo possibile
 
-=== 
+SIGNIFICA
 
-l'arte della semplicità.
-
-
+**esercitare l'arte della semplicità.**
 
 Facile quando si parte con un nuovo progetto, difficile mantenere il debito tecnico basso in modo da poter garantire sempre un time to market come se si partisse dal foglio bianco ogni volta.
 

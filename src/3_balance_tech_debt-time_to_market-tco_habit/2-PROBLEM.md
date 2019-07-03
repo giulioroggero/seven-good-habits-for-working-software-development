@@ -1,21 +1,12 @@
 # Un problema tipico in ambito Java
 
-Esempio (da https://howtodoinjava.com/hibernate/hibernate-3-introduction-and-writing-hello-world-application/)
+Esempio: voglio gestire i dati sul DB, esporli come REST e visualizzarli in una UI
+
+Quello che viene da fare è approcciare i problemi sempre allo stesso modo. In questo caso JPA/DTO/Service/Controller/ecc
+(da https://howtodoinjava.com/hibernate/hibernate-3-introduction-and-writing-hello-world-application/)
 
 ```java
-  package hibernate.test.dto;
-  
-  import java.io.Serializable;
-  
-  import javax.persistence.Column;
-  import javax.persistence.Entity;
-  import javax.persistence.GeneratedValue;
-  import javax.persistence.GenerationType;
-  import javax.persistence.Id;
-  import javax.persistence.Table;
-  import javax.persistence.UniqueConstraint;
-  
-  import org.hibernate.annotations.OptimisticLockType;
+...
   
   @Entity
   @org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL)

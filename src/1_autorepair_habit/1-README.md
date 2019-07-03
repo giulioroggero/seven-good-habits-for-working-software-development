@@ -10,7 +10,7 @@ Cosa fa un software *Robusto*?
 Quale complessità bisogna affrontare per scrivere un software robusto?
 
 - intercettare tutte le eccezioni
-- gestire il ripristino dello stato consistente se il software ha smesso di funzionare mentre lo stava cambiando
-- ripristinare le connessioni e liberare la memoria non utilizzata
+- rirpistinare lo stato consistente dei dati in caso di eccezioni
+- ripristinare le connessioni ai db/servizi e liberare la memoria non utilizzata
 
 ALTRE SOLUZIONI?
