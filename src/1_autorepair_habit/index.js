@@ -19,5 +19,4 @@ module.exports = customService(async function index(service) {
     url: service.config.MONGODB_URL,
     useNewUrlParser: true,
   }) 
-
 })

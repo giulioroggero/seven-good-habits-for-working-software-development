@@ -4,4 +4,4 @@ Working means:
 
 - no defects
 - create value for the end user
-- lower cost of maintenance
+- lower cost of maintenance (TCO)
