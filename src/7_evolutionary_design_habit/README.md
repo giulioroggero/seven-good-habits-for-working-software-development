@@ -14,4 +14,4 @@ L'architettura emerge dal suo utilizzo in ambiente di produzione!
   - ha un valore di business
   - ha una strategia di rollback nel caso fallisse la riscrittura
 
-*Mantenere sempre aggiornata una visione dell'architettura di alto livello per condividerla con tutto il team ed essere sempre tutti allineati*
+***Mantenere sempre aggiornata una visione dell'architettura di alto livello per condividerla con tutto il team ed essere sempre tutti allineati***

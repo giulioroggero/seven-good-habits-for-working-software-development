@@ -19,7 +19,7 @@ public class ReaderQueryService {
       
     public ReaderResultSet find() {
         ReaderResultSet result = new ReaderResultSet();
-        String sql = "SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY FROM HR.JOBS";
+        String sql = "SELECT REGION_ID, REGION_NAME FROM HR.REGIONS";
         result.setSql(sql);
 
         try {
