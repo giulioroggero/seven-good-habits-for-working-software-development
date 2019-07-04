@@ -19,7 +19,7 @@ Comporta che se hello è spostato da un nodo all'altro, hello avrà un altro IP
 Nginx fa la resolve dell'ip degli upstream allo startup e tiene la cache.
 Per cui il problema magico che si risolve con un restart!
 
-(trovato da Jacopo Giola)
+(trovato da Tommaso Allevi)
 
 **un altro esempio**: "accade solo con iPhone 7 Plus, capitava raramente, abbiamo anche testato sullo stesso device senza successo, poi si è capito che era un problema legato al locale!
 
