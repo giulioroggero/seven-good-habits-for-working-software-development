@@ -6,7 +6,7 @@
   "dependencies": {
     "@mia-platform/custom-plugin-lib": "^1.0.2",
     "@mia-platform/lc39": "^2.2.0",
-    "fastify": "^2.6.0",
+    "fastify": "^2.15.1",
     "fastify-mongodb": "^1.0.1"
   },
   "devDependencies": {
